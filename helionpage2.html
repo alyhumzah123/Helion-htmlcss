@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main1 {
+            width: 100%;
+            min-height: 410vh;
+            background-color: white;
+            /* border: 1px solid; */
+            display: flex;
+
+        }
+
+        .sidediv {
+            width: 250px;
+            height: 100vh;
+            /* border: 1px solid; */
+            position: fixed;
+            box-shadow: 0 0 2px 2px grey;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            /* position: absolute; */
+
+        }
+
+        .navlist a {
+            text-decoration: none;
+            color: black;
+            font-size: large;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navlist {
+            margin-top: 20%;
+            list-style: none;
+            /* position: relative; */
+        }
+
+        li {
+            position: relative;
+            /* border: 1px solid; */
+            width: 200%;
+        }
+
+        .navlist:hover a {
+            color: red;
+        }
+
+        #right {
+            opacity: 0;
+        }
+
+        #right3 {
+            opacity: 0;
+        }
+
+        #right4 {
+            opacity: 0;
+        }
+
+        #right5 {
+            opacity: 0;
+        }
+
+        #right6 {
+            opacity: 0;
+        }
+
+        #right {
+            color: red;
+            position: absolute;
+            font-size: 20px;
+            margin-left: 40px;
+            /* opacity: 0; */
+            transition: .5s all ease;
+        }
+
+        #right3 {
+            color: red;
+            position: absolute;
+            font-size: 20px;
+            margin-left: 18px;
+            /* opacity: 0; */
+            transition: .5s all ease;
+        }
+
+        .navlist:hover #right3 {
+            margin-left: 30px;
+        }
+
+        #right4 {
+            color: red;
+            position: absolute;
+            font-size: 20px;
+            margin-left: 55px;
+            /* opacity: 0; */
+            transition: .5s all ease;
+        }
+
+        .navlist:hover #right4 {
+            margin-left: 65px;
+        }
+
+        #right5 {
+            color: red;
+            position: absolute;
+            font-size: 20px;
+            margin-left: 50px;
+            /* opacity: 0; */
+            transition: .5s all ease;
+        }
+
+        .navlist:hover #right5 {
+            margin-left: 60px;
+        }
+
+        #right6 {
+            color: red;
+            position: absolute;
+            font-size: 20px;
+            margin-left: 20px;
+            /* opacity: 0; */
+            transition: .5s all ease;
+        }
+
+        .navlist:hover #right6 {
+            margin-left: 30px;
+        }
+
+        .navlist:hover #right {
+            opacity: 1;
+
+        }
+
+        .navlist:hover #right3 {
+            opacity: 1;
+
+        }
+
+        .navlist:hover #right4 {
+            opacity: 1;
+
+        }
+
+        .navlist:hover #right5 {
+            opacity: 1;
+
+        }
+
+        .navlist:hover #right6 {
+            opacity: 1;
+
+        }
+
+        .navlist:hover #right {
+            margin-left: 60px;
+        }
+
+        .iconsdiv-bor {
+            /* border: 1px solid; */
+            width: 100%;
+            height: 10vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pro {
+            font-size: x-large;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        .main2child {
+            width: 1097px;
+            height: 230vh;
+            /* border:1px solid red; */
+            margin-left: 253px;
+
+        }
+
+        .main2nav-bor {
+            width: 1095px;
+            height: 20vh;
+            /* border: 1px solid green; */
+            /* display: flex; */
+
+        }
+
+        .main2nav {
+            list-style: none;
+            margin-left: 600px;
+            /* display: inline-block; */
+            /* border: 1px solid; */
+            width: 18%;
+            margin-top: 80px;
+
+
+        }
+
+        .main2navlist a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            /* display: inline-block; */
+            float: left;
+            margin-left: 30px;
+
+
+
+        }
+
+        .main2navlist a {
+            position: relative;
+            transition: .3s all linear;
+        }
+
+        .borderline {
+            width: 2%;
+            height: 0.4vh;
+            background-color: red;
+            position: absolute;
+            top: 7px;
+            /* color: red; */
+            margin-left: -5%;
+            opacity: 0;
+            transition: .4s all ease;
+        }
+
+        .aa a:hover {
+            color: red;
+        }
+
+        .aa a:hover .borderline {
+            /* margin-left: 0; */
+            width: 110%;
+            opacity: 1;
+        }
+
+        .picspage {
+            width: 95%;
+            height: 230vh;
+            /* border: 1px solid blue;  */
+            display: grid;
+            margin: auto;
+            grid-template-columns: repeat(3, 340px);
+            grid-template-rows: repeat(4, 320px);
+            grid-gap: 10px;
+            margin-top: -30px;
+        }
+
+        .pagepics-bor {
+            /* background-color: gray; */
+            position: relative;
+
+        }
+
+        .b {
+            grid-area: 1/2/3/3;
+            height: 65vh;
+
+        }
+
+        .g {
+            height: 40vh;
+            margin-top: -70%;
+        }
+
+        .j {
+            margin-top: -49vh;
+            height: 60vh;
+        }
+
+        .l {
+            grid-area: 5/2/6/3;
+            margin-top: -73%;
+            height: 45vh;
+        }
+
+        .pagepics-bor {
+            position: relative;
+            overflow: hidden;
+            transition: .4s all ease;
+
+        }
+
+        .rich {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            transition: .7s all ease;
+
+        }
+
+        .overlay {
+            width: 80%;
+            height: 80%;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: relative;
+            left: 10%;
+            top: 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            opacity: 0;
+            transition: .4s all ease;
+
+        }
+
+        .pagepics-bor:hover .overlay {
+            opacity: 1;
+        }
+
+        .pagepics-bor:hover .rich {
+            transform: scale(1.1);
+        }
+
+        #arrow {
+            color: rgba(255, 0, 0, 0.637);
+            z-index: 111;
+            font-size: 30px;
+            margin-top: -5%;
+
+        }
+
+        .hr {
+            font-family: Arial, Helvetica, sans-serif;
+            transition: .3s all ease;
+            margin-top: -5%;
+            font-size: x-large;
+            color: white;
+        }
+
+        .pr {
+            /* margin-top: -30%; */
+            color: gray;
+            font-family: Arial, Helvetica, sans-serif;
+            transition: .5s all ease;
+        }
+
+        .pagepics-bor:hover .hr {
+            margin-top: 0;
+        }
+
+        .pagepics-bor:hover .pr {
+            margin-top: -25%;
+        }
+
+        .but {
+            width: 15%;
+            height: 9vh;
+            border: 2px solid;
+            border-radius: 10px;
+            margin-left: 40%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            background-color: white;
+            transition: .4s all ease;
+        }
+
+        .but:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .cancel {
+            /* border: 1px solid; */
+            width: 1095px;
+            height: 90vh;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .canceldivs {
+            width: 500px;
+            height: 70vh;
+            /* border: 1px solid; */
+            display: flex;
+            flex-direction: column;
+            /* align-items: center;  */
+            justify-content: space-around;
+        }
+
+        .linediv {
+            width: 20%;
+            height: 10vh;
+            /* border: 1px solid; */
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .line {
+            width: 40%;
+            height: 0.2vh;
+            background-color: black;
+        }
+
+        .line-h1 {
+            font-size: large;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .french-h1 {
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .french-p {
+            color: gray;
+            font-size: large;
+        }
+
+        .read {
+            width: 30%;
+            height: 5vh;
+            display: flex;
+            align-items: center;
+            border: none;
+            background-color: white;
+        }
+
+        .reads {
+            font-weight: bold;
+            /* margin-left: 10px; */
+        }
+
+        #arrow-1 {
+            color: red;
+            margin-left: px;
+            transition: .5s all ease;
+            opacity: 0;
+        }
+
+        #arrow-2 {
+            transition: .5s all ease;
+
+        }
+
+        .read:hover #arrow-2 {
+            margin-left: 10px;
+            opacity: 0;
+
+        }
+
+        .read:hover #arrow-1 {
+            margin-left: 13px;
+            opacity: 1;
+        }
+
+        .dec {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .canceldivs1 {
+            width: 500px;
+            height: 80vh;
+            /* border: 1px solid; */
+            /* display: flex; */
+            /* flex-direction: column; */
+            /* align-items: center;  */
+            /* justify-content: space-around; */
+            position: relative;
+        }
+
+        .copy {
+            position: absolute;
+            height: 88%;
+            width: 88%;
+            margin-top: 50px;
+            border-radius: 5px;
+        }
+
+        .cir {
+            /* width: 10%; */
+            position: absolute;
+            left: 83%;
+            top: 25%;
+            /* transition: all .5s linear; */
+            /* animation: circle 10s linear infinite ; */
+        }
+
+        @keyframes circle {
+            form {
+                transform: rotate(0deg)translateX(0px) rotate(0deg)
+            }
+
+            to {
+                transform: rotate(360deg)translateX(30px)rotate(-360deg)
+            }
+
+        }
+
+        .cross {
+            position: absolute;
+            margin-top: 300px;
+        }
+
+        .footer {
+            width: 1096px;
+            height: 48vh;
+            background-color: rgba(0, 0, 0, 0.938);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .footerdivs2 {
+            width: 350px;
+            height: 20vh;
+            /* border: 1px solid white; */
+
+        }
+
+        .footerdivs {
+            width: 200px;
+            height: 30vh;
+            /* border: 1px solid white; */
+            display: flex;
+            flex-direction: column;
+            /* align-items: center; */
+            justify-content: space-around;
+
+
+        }
+
+        .footer-h1 {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+        }
+
+        .li {
+            position: relative;
+            list-style: none;
+        }
+
+        .end {
+            list-style: none;
+        }
+
+        .end a {
+            color: white;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-decoration: none;
+            position: relative;
+            top: 20px;
+
+
+        }
+
+        .end:hover .mailline {
+            width: 0%;
+        }
+
+        .mailline {
+            width: 100%;
+            height: 0.3vh;
+            background-color: white;
+            position: absolute;
+            transition: .5s all ease;
+        }
+
+        .end2 a {
+            color: grey;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .end2 {
+            list-style: none;
+            margin-left: 40%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main1">
+        <div class="sidediv">
+            <h1 class="sidediv-h1">HELION</h1>
+            <ul class="nav">
+                <li class="navlist ab"><a href="">Home.</a>
+                    <i class="fas fa-long-arrow-alt-right" id="right"></i>
+                </li>
+                <li class="navlist ac"><a href="">Pages.</a>
+
+                    <i class="fas fa-long-arrow-alt-right" id="right"></i>
+                </li>
+                <li class="navlist ad"><a href="">About Us.</a>
+                    <i class="fas fa-long-arrow-alt-right" id="right3"></i>
+                </li>
+                <li class="navlist ae"><a href="">Blog.</a>
+                    <i class="fas fa-long-arrow-alt-right" id="right4"></i>
+                </li>
+                <li class="navlist af"><a href="">Store.</a>
+                    <i class="fas fa-long-arrow-alt-right" id="right5"></i>
+                </li>
+                <li class="navlist ag"><a href="">Contacts.</a>
+                    <i class="fas fa-long-arrow-alt-right" id="right6"></i>
+                </li>
+            </ul>
+
+            <div class="iconsdiv-bor">
+                <h1 class="pro">HELION <span style="color: red;">Projects</span></h1>
+            </div>
+        </div>
+        <div class="main2child">
+            <div class="main2nav-bor">
+                <ul class="main2nav">
+                    <li class="main2navlist aa"><a href="">All Works
+                            <div class="borderline"></div>
+
+                        </a></li>
+                    <li class="main2navlist aa"><a href="">Couples
+                            <div class="borderline"></div>
+                        </a></li>
+                    <li class="main2navlist aa"><a href="">Lifestyle
+                            <div class="borderline"></div>
+                        </a></li>
+                    <li class="main2navlist aa"><a href="">Portraits
+                            <div class="borderline"></div>
+
+                        </a></li>
+                </ul>
+            </div>
+            <div class="picspage">
+                <div class="pagepics-bor a">
+                    <img class="rich" src="./hrlionpage2pics/port-19-copyright-750x617.jpg" alt="">
+                    <div class="overlay">
+                        <i class="fas fa-long-arrow-alt-right" id="arrow"></i>
+                        <h1 class="hr">Love in the air</h1>
+                        <p class="pr">Lifestyle</p>
+
+                    </div>
+                </div>
+                <div class="pagepics-bor b">
+                    <img class="rich" src="./hrlionpage2pics/port-20-copyright-750x919.jpg" alt="">
+                    <div class="overlay">
+                        <i class="fas fa-long-arrow-alt-right" id="arrow"></i>
+                        <h1 class="hr">People's Portraits</h1>
+                        <p class="pr">Portraits</p>
+
+                    </div>
+                </div>
+                <div class="pagepics-bor c">
+                    <img class="rich" src="./hrlionpage2pics/port-21-copyright-750x617.jpg" alt="">
+                    <div class="overlay">
+                        <i class="fas fa-long-arrow-alt-right" id="arrow"></i>
+                        <h1 class="hr">Anniversary Session</h1>
+                        <p class="pr">Couples</p>
+
+                    </div>
+                </div>
+                <div class="pagepics-bor d">
+                    <img class="rich" src="./hrlionpage2pics/port-22-copyright-750x738.jpg" alt="">
+                    <div class="overlay">
+                        <i class="fas fa-long-arrow-alt-right" id="arrow"></i>
+                        <h1 class="hr">Trending Hairstyles</h1>
+                        <p class="pr">Lifestyle</p>
+
+
+                    </div>
+                </div>
+                <div class="pagepics-bor e">
+                    <img class="rich" src="./hrlionpage2pics/port-23-copyright-750x535.jpg" alt="">
+                    <div class="overlay">
+                        <i class="fas fa-long-arrow-alt-right" id="arrow"></i>
+                        <h1 class="hr">Marathon Highlights</h1>
+                        <p class="pr">Couples</p>
+
+
+                    </div>
+                </div>
+                <div class="pagepics-bor f">
+                    <img class="rich" src="./hrlionpage2pics/port-24-copyright-750x675.jpg" alt="">
+                    <div class="overlay">
+                        <i class="fas fa-long-arrow-alt-right" id="arrow"></i>
+                        <h1 class="hr">Friendly Street Styles</h1>
+                        <p class="pr">lifestyle</p>
+
+
+                    </div>
+                </div>
+                <div class="pagepics-bor g">
+                    <img class="rich" src="./hrlionpage2pics/port-25-copyright-750x614.jpg" alt="">
+                    <div class="overlay">
+                        <i class="fas fa-long-arrow-alt-right" id="arrow"></i>
+                        <h1 class="hr">City Cafe Streets</h1>
+                        <p class="pr">Lifestyle</p>
+
+                    </div>
+                </div>
+                <div class="pagepics-bor h">
+                    <img class="rich" src="./hrlionpage2pics/port-26-copyright-750x818.jpg" alt="">
+                    <div class="overlay">
+                        <i class="fas fa-long-arrow-alt-right" id="arrow"></i>
+                        <h1 class="hr">craftsmen</h1>
+                        <p class="pr">Lifestyle</p>
+
+                    </div>
+                </div>
+                <div class="pagepics-bor i">
+                    <img class="rich" src="./hrlionpage2pics/port-27-copyright-750x617.jpg" alt="">
+                    <div class="overlay">
+                        <i class="fas fa-long-arrow-alt-right" id="arrow"></i>
+                        <h1 class="hr">Newly wed shoot</h1>
+                        <p class="pr">Couples</p>
+
+
+                    </div>
+                </div>
+                <div class="pagepics-bor j">
+                    <img class="rich" src="./hrlionpage2pics/port-28-copyright-750x835.jpg" alt="">
+                    <div class="overlay">
+                        <i class="fas fa-long-arrow-alt-right" id="arrow"></i>
+                        <h1 class="hr">Coworking space</h1>
+                        <p class="pr">Lifestyle</p>
+
+
+                    </div>
+                </div>
+                <div class="pagepics-bor k">
+                    <img class="rich" src="./hrlionpage2pics/port-29-copyright-750x614.jpg" alt="">
+                    <div class="overlay">
+                        <i class="fas fa-long-arrow-alt-right" id="arrow"></i>
+                        <h1 class="hr">relationship goals</h1>
+                        <p class="pr">Couples</p>
+                    </div>
+                </div>
+                <div class="pagepics-bor l">
+                    <img class="rich" src="./hrlionpage2pics/port-30-copyright-750x807.jpg" alt="">
+                    <div class="overlay">
+                        <i class="fas fa-long-arrow-alt-right" id="arrow"></i>
+                        <h1 class="hr">Ethnic Stories</h1>
+                        <p class="pr">Discipline</p>
+                    </div>
+                </div>
+            </div>
+            <button class="but">Learn More</button>
+            <div class="cancel">
+                <div class="canceldivs">
+                    <div class="linediv">
+                        <div class="line"></div>
+                        <h1 class="line-h1">Hello</h1>
+                    </div>
+                    <h1 class="french-h1">I’m a french<br>
+                        photographer based<br>
+                        in Lyon, since 2014.</h1>
+                    <p class="french-p">I love graphic design and photography and have been working<br> on my portfolio
+                        since 2014. You can learn the details of my<br> professional life as a designer and
+                        photographer. Contact me<br> and we will discuss your projects!</p>
+                    <button class="read">
+                        <div class="reads">Read More</div><i class="fas fa-arrow-right" id="arrow-1"></i><i
+                            class="fas fa-arrow-right" id="arrow-2"></i>
+                    </button>
+                </div>
+                <div class="canceldivs1">
+                    <img class="dec" src="./hrlionpage2pics/decoration-circles-2.png" alt="">
+                    <img class="copy" src="./hrlionpage2pics/img-4-copyright.jpg" alt="">
+                    <img class="cir" src="./hrlionpage2pics/decoration-circle.png" alt="">
+                    <img class="cross" src="./hrlionpage2pics/decoration-cross.png" alt="">
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footerdivs2">
+                    <h1 class="footer-h1">Let's Work Together</h1>
+                    <li class="end"><a href="">info@email.com
+                            <div class="mailline"></div>
+                        </a></li>
+                </div>
+                <div class="footerdivs">
+                    <li class="end2"><a href="">Home</a></li>
+                    <li class="end2"><a href="">About</a></li>
+                    <li class="end2"><a href="">Me</a></li>
+                </div>
+                <div class="footerdivs">
+                    <li class="end2"><a href="">COntact Us </a></li>
+                    <li class="end2"><a href="">About Us</a></li>
+                    <li class="end2"><a href="">Help</a></li>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
